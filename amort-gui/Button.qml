@@ -33,3 +33,4 @@ Rectangle{
 
   //detmermines color of button by using the conditional operator
   color: buttonMouseArea.pressed ? Qt.darker(buttonColor, 1.5) : buttonColor
+}

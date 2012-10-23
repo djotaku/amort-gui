@@ -5,3 +5,26 @@ This is an amortization table for home mortgages, but it should work for anythin
 Right now it outputs to a .csv file for importing into a spreadsheet.
 
 If you create a file called extraprinciple you can put numbers with each line representing a month of extra principle payments.  Put a 0 for months without extra principle paid off.
+
+ROADMAP
+
+v1.2
+add GPL, copyright info to files (include copy of GPLv3)
+new branch
+make extra principle able to have comments
+use app.py to set title, etc
+new branch
+check out link to system sytem - if makes sense edit to look like that
+new branch 
+add file->quit and help->about 
+v1.3
+new branch
+add input box for csv filename
+add radio control for csv or screen
+v1.4
+new branch
+another page for comparisons with different interest rates 
+	highlight differences in monthly payments
+another page for comparison with different amounts of extra principle
+	highlight differences in end month and final amounts paid
+in both of above display inflection point for interest and principle

@@ -13,8 +13,6 @@ add GPL, copyright info to files (include copy of GPLv3)
 new branch
 make extra principle able to have comments
 use app.py to set title, etc
-new branch
-check out link to system sytem - if makes sense edit to look like that
 new branch 
 add file->quit and help->about 
 v1.3
@@ -28,3 +26,7 @@ another page for comparisons with different interest rates
 another page for comparison with different amounts of extra principle
 	highlight differences in end month and final amounts paid
 in both of above display inflection point for interest and principle
+v2.0
+print amort table to QML screen
+v2.1
+use desktop styles - coming out around the time of QT5 to make buttons, etc look natural on KDE

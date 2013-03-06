@@ -1,8 +1,8 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
 import Qt 4.7
-import "/usr/lib64/kde4/imports/org/kde/plasma/core" as PlasmaCore  
-//remove the 64 on the above line for it to work with kubuntu - at least on Danielle's computer
+import org.kde.plasma.core 0.1 as PlasmaCore
+import org.kde.plasma.components 0.1 as PlasmaComponents
 
 Rectangle {
   

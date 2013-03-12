@@ -1,4 +1,3 @@
-// import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
 import org.kde.plasma.core 0.1 as PlasmaCore
 import org.kde.plasma.components 0.1 as PlasmaComponents
@@ -137,7 +136,6 @@ Rectangle {
             y: 135
             width: 200
             text: "Calculate"
-            //onButtonClick: calculateit(principle_input.text,interest_input1.text,paymets_input1.text)
 	    onClicked: calculateit(principle_input.text,interest_input1.text,paymets_input1.text)
         }
     }

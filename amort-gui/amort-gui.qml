@@ -4,7 +4,7 @@ import org.kde.plasma.components 0.1 as PlasmaComponents
 
 Rectangle {
   
-    signal calculateit(string principle, string interest, string payments);
+  signal calculateit(string principle, string interest, string payments);
 
   function thetable(table)
   {
@@ -25,9 +25,7 @@ Rectangle {
         anchors.verticalCenterOffset: -153
         anchors.horizontalCenterOffset: -9
     }
-      
-   
-         
+    
  PlasmaComponents.TabBar {
  PlasmaComponents.TabButton {
  text: "Data Entry"
@@ -37,9 +35,7 @@ PlasmaComponents.TabButton {
  text: "Amortization Table"
  tab: barTab
  }
-// PlasmaComponents.TabButton {
-// text: "baz"
-// tab: bazTab
+
  }
 PlasmaComponents.TabGroup {
 id: tabGroup
@@ -161,7 +157,9 @@ PlasmaComponents.Page{
 
 PlasmaComponents.Page{
   id:barTab
-  
+  MouseArea {
+        anchors.fill: parent
+  }
 }
 }
 

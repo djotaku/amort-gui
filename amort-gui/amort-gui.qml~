@@ -1,4 +1,3 @@
-// import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
 import org.kde.plasma.core 0.1 as PlasmaCore
 import org.kde.plasma.components 0.1 as PlasmaComponents
@@ -27,10 +26,29 @@ Rectangle {
         anchors.verticalCenterOffset: -153
         anchors.horizontalCenterOffset: -9
     }
-    MouseArea {
+      
+   
+         
+ PlasmaComponents.TabBar {
+ PlasmaComponents.TabButton {
+ text: "Data Entry"
+ tab: fooTab
+ }
+PlasmaComponents.TabButton {
+ text: "Amortization Table"
+ tab: barTab
+ }
+// PlasmaComponents.TabButton {
+// text: "baz"
+// tab: bazTab
+ }
+PlasmaComponents.TabGroup {
+id: tabGroup
+PlasmaComponents.Page{
+  id: fooTab
+   MouseArea {
         anchors.fill: parent
-        
-	Rectangle{
+  Rectangle{
 	  x: 93
           y: 47
           width: 80
@@ -140,6 +158,13 @@ Rectangle {
 	    onClicked: calculateit(principle_input.text,interest_input1.text,paymets_input1.text)
         }
     }
+}
+
+PlasmaComponents.Page{
+  id:barTab
+  
+}
+}
 
     Row {
         id: row1

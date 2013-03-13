@@ -21,15 +21,33 @@ Rectangle {
         x: 96
         y: 19
         anchors.centerIn: parent
-        text: "Amortization Calculator"
         horizontalAlignment: Text.AlignLeft
         anchors.verticalCenterOffset: -153
         anchors.horizontalCenterOffset: -9
     }
-    MouseArea {
+      
+   
+         
+ PlasmaComponents.TabBar {
+ PlasmaComponents.TabButton {
+ text: "Data Entry"
+ tab: fooTab
+ }
+PlasmaComponents.TabButton {
+ text: "Amortization Table"
+ tab: barTab
+ }
+// PlasmaComponents.TabButton {
+// text: "baz"
+// tab: bazTab
+ }
+PlasmaComponents.TabGroup {
+id: tabGroup
+PlasmaComponents.Page{
+  id: fooTab
+   MouseArea {
         anchors.fill: parent
-        
-	Rectangle{
+  Rectangle{
 	  x: 93
           y: 47
           width: 80
@@ -139,6 +157,13 @@ Rectangle {
 	    onClicked: calculateit(principle_input.text,interest_input1.text,paymets_input1.text)
         }
     }
+}
+
+PlasmaComponents.Page{
+  id:barTab
+  
+}
+}
 
     Row {
         id: row1

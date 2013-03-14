@@ -45,6 +45,7 @@ def printtoscreen(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment
 
     #generate totals
     print "Totals \t %10.2f \t %10.2f \t %10.2f" % (totalPayment, totalPrincipal, totalInterest)
+    return "test text"
 
 def makecsv(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict):
     #create itereable
@@ -84,6 +85,7 @@ def makecsv(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,princ
 
     writer = csv.writer(open("amort.csv", "wb"))
     writer.writerows(csvfinal)
+    return "CSV text"
 
 def fromgui(output,P_in,i_in,n_in):
 
@@ -116,7 +118,7 @@ def fromgui(output,P_in,i_in,n_in):
   ####################################
 
   if output == 'csv':
-      makecsv(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict)
+      text = makecsv(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict)
   elif output == 'screen':
-      printtoscreen(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict)
-  return 0
+      text = printtoscreen(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict)
+  return (0,text)

@@ -6,11 +6,12 @@ Rectangle {
   
   signal calculateit(string principle, string interest, string payments);
 
-  function thetable(table)
+  function thetable(table, text)
   {
     if(table==0)
     {
       rowtext.text="Calculations completed successfully.  Look for an amort.csv file to import into spreadsheet"
+      texty.text=text
     }
   }
   

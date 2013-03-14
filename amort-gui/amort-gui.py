@@ -8,14 +8,14 @@ import amortization
 #this class will emit success if photo is added to group
 class updateGroup(QObject):
   
-  now = pyqtSignal(int)
+  now = pyqtSignal(int,object)
   
   def calculations(self, principle, interest, payments):
     #print "adddel: " + adddel #debugging
     #table = call("python /home/ermesa/bin/python/amortization/amortization.py -screen -P" + principle + "-i" + interest + "-n" + payments, shell=True)
-    table = amortization.fromgui("csv",principle, interest, payments)
+    (table,text) = amortization.fromgui("csv",principle, interest, payments)
     #print "table: " + table #debugging
-    self.now.emit(table)
+    self.now.emit(table,text)
 
   def launchwebsite(self,string):
     webbrowser.open(string)

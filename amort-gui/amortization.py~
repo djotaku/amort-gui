@@ -10,7 +10,7 @@ __email__ = "ericsbinaryworld at gmail dot com"
 
 import csv,sys
 
-def printtoscreen(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment):
+def printtoscreen(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict):
 
     print "Loan Amount:", P
     print "Annual Interest:",  i*12*100
@@ -46,7 +46,7 @@ def printtoscreen(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment
     #generate totals
     print "Totals \t %10.2f \t %10.2f \t %10.2f" % (totalPayment, totalPrincipal, totalInterest)
 
-def makecsv(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment):
+def makecsv(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict):
     #create itereable
     csvfinal = []
     csvthisime = []

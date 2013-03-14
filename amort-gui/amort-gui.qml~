@@ -4,7 +4,7 @@ import org.kde.plasma.components 0.1 as PlasmaComponents
 
 Rectangle {
   
-    signal calculateit(string principle, string interest, string payments);
+  signal calculateit(string principle, string interest, string payments);
 
   function thetable(table)
   {
@@ -159,6 +159,12 @@ PlasmaComponents.Page{
   id:barTab
   MouseArea {
         anchors.fill: parent
+        Rectangle{
+	  Text{
+	    id:texty
+	    text:"Hello!"
+	  }
+	}
   }
 }
 }

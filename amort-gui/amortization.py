@@ -5,7 +5,7 @@ __copyright__ = "(c) 2010 Eric Mesa"
 __email__ = "ericsbinaryworld at gmail dot com"
 
 #TODO
-#need to fix so it uses eral numbers instead of integers
+#need to fix so it uses real numbers instead of integers
 #also add comments in the principal file
 
 import csv,sys

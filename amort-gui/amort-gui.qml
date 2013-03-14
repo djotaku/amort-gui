@@ -159,6 +159,14 @@ PlasmaComponents.Page{
   id:barTab
   MouseArea {
         anchors.fill: parent
+        Rectangle{
+	  x:0
+	  y:50
+	  Text{
+	    id:texty
+	    text:"Hello!"
+	  }
+	}
   }
 }
 }

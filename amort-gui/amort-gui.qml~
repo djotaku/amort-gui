@@ -6,11 +6,12 @@ Rectangle {
   
   signal calculateit(string principle, string interest, string payments);
 
-  function thetable(table)
+  function thetable(table, text)
   {
     if(table==0)
     {
       rowtext.text="Calculations completed successfully.  Look for an amort.csv file to import into spreadsheet"
+      texty.text=text
     }
   }
   
@@ -152,6 +153,17 @@ PlasmaComponents.Page{
             text: "Calculate"
 	    onClicked: calculateit(principle_input.text,interest_input1.text,paymets_input1.text)
         }
+        Row {
+        id: row1
+        x: 0
+        y: 182
+        width: 360
+        height: 178
+        Text{
+	  id: "rowtext"
+	  text: "Hello! Enter or modify the input data to calculate the amortization table!"
+	}
+    }
     }
 }
 
@@ -171,15 +183,5 @@ PlasmaComponents.Page{
 }
 }
 
-    Row {
-        id: row1
-        x: 0
-        y: 182
-        width: 360
-        height: 178
-        Text{
-	  id: "rowtext"
-	  text: "Hello! Enter or modify the input data to calculate the amortization table!"
-	}
-    }
+    
 }

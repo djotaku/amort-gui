@@ -12,13 +12,16 @@ import csv,sys
 
 def printtoscreen(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict):
 
-    print "Loan Amount:", P
-    print "Annual Interest:",  i*12*100
-    print "Payment: %10.2f\n" % MonthlyPayment
+    screentext = []
 
     period = 1
     #generate titles
-    print "\t Payment \t Principal \t Interest \t Extra Principal  Balance"
+    screentext = [" \t"]
+    screentext.append("Payment\t")
+    screentext.append("Principal\t")
+    screentext.append("Interest\t")
+    screentext.append("Extra Principal ")
+    screentext.append("Balance\n")    
 
     #generate amortization table
     while period < n+1:
@@ -35,17 +38,48 @@ def printtoscreen(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment
         if P < MonthlyPayment:
             MonthlyPayment = P + intpayment
             P = P - (MonthlyPayment - intpayment) - int(principaldict[period])
-            print "%d \t %10.2f \t %10.2f \t %10.2f \t %10.2f \t %10.2f"% (period, MonthlyPayment, MonthlyPayment-intpayment, intpayment, int(principaldict[period]),P)
+            periodtext = "%d \t" % period
+            screentext.append(periodtext)
+            MonthlyPaymenttext = "%10.2f \t" % MonthlyPayment
+            screentext.append(MonthlyPaymenttext)
+            Principalcalc = MonthlyPayment-intpayment
+            Principaltext = "%10.2f \t" %  Principalcalc
+            screentext.append(Principaltext)
+            Interesttext = "%10.2f \t" %  intpayment
+            screentext.append(Interesttext)
+            ExtraPrincipleText =  "%10.2f \t" %  int(principaldict[period])
+            screentext.append(ExtraPrincipleText)
+            BalanceText = "%10.2f \n" %  P
+            screentext.append(BalanceText)
             break
 
         P = P - (MonthlyPayment - intpayment) - int(principaldict[period])
-
-        print "%d \t %10.2f \t %10.2f \t %10.2f \t %10.2f \t %10.2f"% (period, MonthlyPayment, MonthlyPayment-intpayment, intpayment, int(principaldict[period]),P) 
+        
+        periodtext = "%d \t" % period
+        screentext.append(periodtext)
+        MonthlyPaymenttext = "%10.2f \t" % MonthlyPayment
+        screentext.append(MonthlyPaymenttext)
+        Principalcalc = MonthlyPayment-intpayment
+        Principaltext = "%10.2f \t" %  Principalcalc
+        screentext.append(Principaltext)
+        Interesttext = "%10.2f \t" %  intpayment
+        screentext.append(Interesttext)
+        ExtraPrincipleText =  "%10.2f \t" %  int(principaldict[period])
+        screentext.append(ExtraPrincipleText)
+        BalanceText = "%10.2f \n" %  P
+        screentext.append(BalanceText)
         period = period + 1
 
     #generate totals
     print "Totals \t %10.2f \t %10.2f \t %10.2f" % (totalPayment, totalPrincipal, totalInterest)
-    return "test text"
+    screentext.append("Totals \t")
+    TotalPaymenttext =  "%10.2f \t" % totalPayment
+    screentext.append(TotalPaymenttext)
+    totalPrincipaltext = "%10.2f \t" % totalPrincipal
+    screentext.append(totalPrincipaltext)
+    totalInteresttext = "%10.2f \t" % totalInterest
+    screentext.append(totalInteresttext)
+    return ''.join(screentext)
 
 def makecsv(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict):
     #create itereable
@@ -121,4 +155,4 @@ def fromgui(output,P_in,i_in,n_in):
       text = makecsv(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict)
   elif output == 'screen':
       text = printtoscreen(P,i,n,MonthlyPayment,totalPrincipal,totalInterest,totalPayment,principaldict)
-  return 0
+  return (0,text)

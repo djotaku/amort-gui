@@ -153,26 +153,7 @@ PlasmaComponents.Page{
             text: "Calculate"
 	    onClicked: calculateit(principle_input.text,interest_input1.text,paymets_input1.text)
         }
-    }
-}
-
-PlasmaComponents.Page{
-  id:barTab
-  MouseArea {
-        anchors.fill: parent
-        Rectangle{
-	  x:0
-	  y:50
-	  Text{
-	    id:texty
-	    text:"Hello!"
-	  }
-	}
-  }
-}
-}
-
-    Row {
+        Row {
         id: row1
         x: 0
         y: 182
@@ -183,4 +164,28 @@ PlasmaComponents.Page{
 	  text: "Hello! Enter or modify the input data to calculate the amortization table!"
 	}
     }
+    }
+}
+
+PlasmaComponents.Page{
+  id:barTab
+  MouseArea {
+        anchors.fill: parent
+        Rectangle{
+	  id:amortrect
+	  x:0
+	  y:50
+	  
+	  Flickable{
+	    Text{
+	    id:texty
+	    text:"The Amortization Table will appear here once calculated"
+	    }
+	  }
+	}
+  }
+}
+}
+
+    
 }

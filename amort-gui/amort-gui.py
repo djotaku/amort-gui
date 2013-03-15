@@ -13,7 +13,7 @@ class updateGroup(QObject):
   def calculations(self, principle, interest, payments):
     #print "adddel: " + adddel #debugging
     #table = call("python /home/ermesa/bin/python/amortization/amortization.py -screen -P" + principle + "-i" + interest + "-n" + payments, shell=True)
-    (table,text) = amortization.fromgui("csv",principle, interest, payments)
+    (table,text) = amortization.fromgui("screen",principle, interest, payments)
     #print "table: " + table #debugging
     self.now.emit(table,text)
 

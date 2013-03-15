@@ -172,11 +172,13 @@ PlasmaComponents.Page{
   MouseArea {
         anchors.fill: parent
         Rectangle{
+	  id:amortrect
 	  x:0
 	  y:50
-	  Text{
+	  
+	  Flickable{
 	    id:texty
-	    text:"Hello!"
+	    text:"The Amortization Table will appear here once calculated"
 	  }
 	}
   }

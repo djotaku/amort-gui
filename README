@@ -1,3 +1,5 @@
+This code is no longer maintained. Please go to https://github.com/djotaku/amortization . While that currently does not have a GUI, given what I know now about GUIs it'll be trivial for me to add one there after I refactor the code. 
+
 The code is well documented, but I'm adding this readme for Git Hub and anyone coming to my code on there.
 
 This is an amortization table for home mortgages, but it should work for anything else that follows that type of math - say a car loan.
